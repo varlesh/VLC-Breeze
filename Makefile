@@ -6,8 +6,10 @@ all:
 install: local
 
 clear:
-	$(RM) $(INSTALLDIR)/Breeze{,-Fixed-Size}.vlt
+	$(RM) $(INSTALLDIR)/Breeze.vlt
+	$(RM) $(INSTALLDIR)/Breeze-Fixed-Size.vlt
 local:
-	find Breeze{,-Fixed-Size}.vlt -type f -exec install -Dm644 '{}' "$(INSTALLDIR)/{}" \;
+	find Breeze.vlt -type f -exec install -Dm644 '{}' "$(INSTALLDIR)/{}" \;
+	find Breeze-Fixed-Size.vlt -type f -exec install -Dm644 '{}' "$(INSTALLDIR)/{}" \;
 
 uninstall: clear
